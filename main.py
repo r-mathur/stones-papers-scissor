@@ -33,11 +33,11 @@ def start():
 
 	global rock_HandButton,paper_HandButton,scissor_HandButton
 
-	rock_HandButton = Button(root,image=rock_HandPhoto,command=lambda:user_pick('rock'))
+	rock_HandButton = Button(root,image=rock_HandPhoto,command=lambda:user_pick('rock'), bg = 'white')
 
-	paper_HandButton = Button(root,image=paper_HandPhoto,command = lambda:user_pick('paper'))
+	paper_HandButton = Button(root,image=paper_HandPhoto,command = lambda:user_pick('paper'), bg = 'white')
 
-	scissor_HandButton = Button(root,image=scissor_HandPhoto,command =lambda:user_pick('scissors'))
+	scissor_HandButton = Button(root,image=scissor_HandPhoto,command =lambda:user_pick('scissors'), bg = 'white')
 
 
 	rock_HandButton.grid(row = 0, column =0) 
@@ -65,66 +65,72 @@ def user_pick(user_choice):
 	if click ==True:
 
 		if user_choice == 'rock':										#
-			rock_HandButton.configure(image = rockPhoto)				#				
+			rock_HandButton.configure(image = rockPhoto, bg ='#1aff1a')				#				
 																		#	
 			if  pcpick == 'rock':
-				paper_HandButton.configure(image = rockPhoto)
+				paper_HandButton.configure(image = rockPhoto, bg = '#ff1a1a')
 				scissor_HandButton.configure(image = tiePhoto)
 				click = False
 																		# if you choses Rock
 			elif pcpick == 'paper':
-				paper_HandButton.configure(image = paperPhoto)
+				paper_HandButton.configure(image = paperPhoto, bg = '#ff1a1a')
 				scissor_HandButton.configure(image = losePhoto)
 				click = False
 																			#
 			else:															#	
-				paper_HandButton.configure(image = scissorPhoto)			#	
+				paper_HandButton.configure(image = scissorPhoto, bg = '#ff1a1a')			#	
 				scissor_HandButton.configure(image = winPhoto)
 				click = False
+
+
+
 
 		elif user_choice == 'paper':
-			paper_HandButton.configure(image = paperPhoto	)
-		
-			if  pcpick == 'rock':
-				rock_HandButton.configure(image = rockPhoto)
+			paper_HandButton.configure(image = paperPhoto, bg ='#1aff1a')				#
+																			#	
+			if  pcpick == 'rock':											#	
+				rock_HandButton.configure(image = rockPhoto,bg = '#ff1a1a')				#
 				scissor_HandButton.configure(image = winPhoto)
 				click = False
-
+																			# if you choses Paper
 			elif pcpick == 'paper':
-				rock_HandButton.configure(image = paperPhoto)
+				rock_HandButton.configure(image = paperPhoto, bg = '#ff1a1a')
 				scissor_HandButton.configure(image = tiePhoto)
 				click = False
 
-			else:
-				rock_HandButton.configure(image = scissorPhoto)
-				scissor_HandButton.configure(image = losePhoto)
-				click = False
+			else:															#	
+				rock_HandButton.configure(image = scissorPhoto, bg = '#ff1a1a')				#
+				scissor_HandButton.configure(image = losePhoto)				#
+				click = False												#
+
+
+
 		
-		elif user_choice == 'scissors':
-			scissor_HandButton.configure(image = scissorPhoto)
-		
-			if  pcpick == 'rock':
-				paper_HandButton.configure(image = rockPhoto)
+		elif user_choice == 'scissors':										#
+			scissor_HandButton.configure(image = scissorPhoto, bg ='#1aff1a')				#
+																			#	
+			if  pcpick == 'rock':				
+				paper_HandButton.configure(image = rockPhoto, bg = '#ff1a1a')
 				rock_HandButton.configure(image = losePhoto)
 				click = False
-
+																			# if you choses Scissor
 			elif pcpick == 'paper':
-				paper_HandButton.configure(image = paperPhoto)
+				paper_HandButton.configure(image = paperPhoto, bg = '#ff1a1a')
 				rock_HandButton.configure(image = winPhoto)
 				click = False
 
-			else:
-				paper_HandButton.configure(image = scissorPhoto)
-				rock_HandButton.configure(image = tiePhoto)
-				click = False
+			else:															#	
+				paper_HandButton.configure(image = scissorPhoto, bg = '#ff1a1a')			#	
+				rock_HandButton.configure(image = tiePhoto)					#	
+				click = False												#
 				
 		
 	else:
 		if 	user_choice == 'rock' or user_choice == 'paper' or user_choice == 'scissors':
 
-			rock_HandButton.configure(image = rock_HandPhoto)
-			paper_HandButton.configure(image	= paper_HandPhoto)
-			scissor_HandButton.configure(image	= scissor_HandPhoto)
+			rock_HandButton.configure(image = rock_HandPhoto, bg = 'white')
+			paper_HandButton.configure(image	= paper_HandPhoto, bg = 'white')
+			scissor_HandButton.configure(image	= scissor_HandPhoto, bg ='white')
 
 			click	= True	
 
